@@ -1,0 +1,110 @@
+<% layout("/layouts/boilerplate") %>
+<div class="row mt-3">
+  <div class="col-12 col-md-8  offset-md-2 ">
+    <h3>Edit your Listing</h3>
+    <form
+      method="post"
+      action="/listings/<%= listing._id %>?_method=PUT"
+      novalidate
+      class="needs-validation mt-4"
+      enctype="multipart/form-data"
+    >
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          name="listing[title]"
+          value="<%= listing.title %>"
+          class="form-control"
+          required
+        />
+        <div class="valid-feedback">Title looks good!</div>
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          name="listing[description]"
+          rows="6"
+          cols="15"
+          class="form-control"
+          required
+        >
+        <%= listing.description %></textarea
+        >
+        <div class="invalid-feedback">Please enter a short description</div>
+      </div>
+      <div class="card border border-0" >
+        Original Listing Image
+            <img
+          src="<%= originalImageUrl %>"
+          class=" edit-image"
+          alt="..."
+        />
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Upload New Image</label>
+        <input type="file" name="listing[image]" class="form-control" />
+      </div>
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="price" class="form-label">Price</label>
+          <input
+            type="number"
+            name="listing[price]"
+            class="form-control"
+            value="<%= listing.price %>"
+            required
+          />
+          <div class="invalid-feedback">Price should be valid</div>
+        </div>
+        <div class="mb-3 col-md-8">
+          <label for="country" class="form-label">Country</label>
+          <input
+            type="text"
+            name="listing[country]"
+            value="<%= listing.country %>"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Country name should be valid</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input
+          type="text"
+          name="listing[location]"
+          value="<%= listing.location %>"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback">Location should be valid</div>
+      </div>
+      <div class="mb-3">
+        <label for="category" class="form-label">Select category</label>
+        <select
+          name="listing[category][]"
+          id="category"
+          class="form-select"
+          multiple
+        >
+          <option value="Trending" <%= listing.category.includes("Trending") ? "selected" : "" %>>Trending</option>
+          <option value="Rooms" <%= listing.category.includes("Rooms") ? "selected" : "" %>>Rooms</option>
+          <option value="Iconic cities" <%= listing.category.includes("Iconic cities") ? "selected" : "" %>>Iconic cities</option>
+          <option value="Mountains" <%= listing.category.includes("Mountains") ? "selected" : "" %>>Mountains</option>
+          <option value="Castles" <%= listing.category.includes("Castles") ? "selected" : "" %>>Castles</option>
+          <option value="Amazing pools" <%= listing.category.includes("Amazing pools") ? "selected" : "" %>>Amazing pools</option>
+          <option value="Camping" <%= listing.category.includes("Camping") ? "selected" : "" %>>Camping</option>
+          <option value="Farms" <%= listing.category.includes("Farms") ? "selected" : "" %>>Farms</option>
+          <option value="Boats" <%= listing.category.includes("Boats") ? "selected" : "" %>>Boats</option>
+          <option value="Trekking" <%= listing.category.includes("Trekking") ? "selected" : "" %>>Trekking</option>
+        </select>
+      </div>
+      <button class="btn btn-dark edit-btn mt-3">Edit</button>
+      <br /><br />
+    </form>
+  </div>
+</div>
+
+<script src="/js/multipleSelect.js"></script>
+

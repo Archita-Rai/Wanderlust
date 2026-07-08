@@ -1,0 +1,61 @@
+
+<nav class="navbar navbar-expand-lg bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings"
+      ><i class="fa-regular fa-compass"></i
+    > <a style="font-size: 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-weight: 600;color:black;text-decoration: none;" href="/listings" class="me-auto ">Wanderlust</a> </a>
+    <!-- <div class="navbar-nav nav-option home-option d-none d-md-flex d-lg-none">
+      <a class="nav-link" href="/listings">Explore</a>
+    </div> -->
+    <div class="navbar-nav mx-auto search-box-md d-none d-md-flex d-lg-none">
+      <form class="d-flex" role="search" method="GET" action="/search">
+        <input
+          class="form-control me-2 search-input"
+          type="search"
+          name="q"
+          placeholder="Search destination"
+        />
+        <button class="btn search-btn text-light" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>Search
+        </button>
+      </form>
+    </div>
+    <button
+      class="navbar-toggler"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse navbar-options"
+      id="navbarNavAltMarkup"
+    >
+      <!-- <div class="navbar-nav nav-option d-md-none d-lg-flex">
+        <a class="nav-link" href="/listings">Explore</a>
+      </div> -->
+      <div class="navbar-nav ms-auto search-box d-md-none d-lg-flex">
+        <form class="d-flex" role="search" method="GET" action="/search">
+          <input
+            class="form-control me-2 search-input"
+            type="search"
+            name="q"
+            placeholder="Search destination"
+          />
+          <button class="btn search-btn text-light" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>Search
+          </button>
+        </form>
+      </div>
+      <div class="navbar-nav ms-auto nav-option d-block d-md-flex">
+        <a class="nav-link" href="/listings/new">Airbnb your home</a>
+        <% if(!currUser){%>
+        <a class="nav-link nav-option" href="/signup"><b>Sign up</b></a>
+        <a class="nav-link" href="/login"><b>Log in</b></a>
+        <% } %> <% if(currUser) {%>
+        <a class="nav-link nav-option" href="/logout">Log out</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,489 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.container {
+  flex: 1;
+}
+
+.navbar {
+  height: 5rem;
+  background-color: white;
+}
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+
+.fa-compass {
+  color: #fe424d;
+  font-size: 2.5rem;
+}
+.nav-link {
+  color: #222222 !important;
+}
+.hidden{
+  display: none;
+}
+/* footer */
+.f-info-links a {
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: white;
+}
+
+.f-info-links a:hover {
+  text-decoration: underline;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+  font-size: 1.2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.f-info-socials i {
+  font-size: 1.4rem;
+  margin-right: 1rem;
+}
+
+.f-info {
+  height: 8rem;
+  background-color: #fe424d;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: space-evenly;
+  text-align: center;
+}
+
+/* Cards */
+.title-div {
+  padding: 1rem !important;
+  margin-top: 1rem !important;
+}
+
+.listing-card {
+  border: none !important;
+  margin-bottom: 2rem !important;
+}
+
+.card-img-top {
+  border-radius: 1rem !important;
+  width: 90% !important;
+  object-fit: cover !important;
+  box-shadow:-2px 0 1px -1px rgb(95, 94, 94),   /* Left shadow */
+   2px 0 1px -1px rgb(94, 92, 92),   /* Right shadow */
+   0 -2px 1px -1px rgb(93, 92, 92); ;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.card-text {
+  font-weight: 400 !important;
+}
+.listing-link {
+  text-decoration: none;
+}
+
+/* Card Hover Effect */
+
+.card-img-overlay {
+  opacity: 0;
+}
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: white;
+}
+.location-icon {
+  opacity: 0.8;
+}
+.add-btn,
+.edit-btn {
+  background-color: #fe424d !important;
+  border: none !important;
+}
+.edit-btn {
+  width: 4rem;
+}
+.show-img {
+  height: 60vh;
+}
+.btns {
+  width: 50%;
+  padding-left: 0%;
+  display: flex;
+}
+
+.show-card {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.map-div {
+  background-color: darkblue;
+  height: 75vh !important;
+  width: 100% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* .rating-size{
+    display: inline-block;
+    font-size: 3px;;
+} */
+
+.edit-image {
+  height: 15rem;
+  width: 25rem;
+  border-radius: 1.5rem;
+  background-position: center;
+  background-size: cover;
+}
+
+/*Map */
+/* #map {
+  height: px;
+  width: 100vh;
+} */
+
+.map-heading,
+.map-para {
+  color: #fe424d;
+}
+@media only screen and (max-width: 528px) {
+  .edit-image {
+    height: 15rem;
+    width: 17rem !important;
+    background-position: center;
+    background-size: cover;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .show-img {
+    height: 40vh;
+  }
+  .title-div h3 {
+    font-size: 1.2rem !important;
+    font-weight: 600;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  #map {
+    height: 45vh !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .show-img {
+    height: 45vh !important;
+  }
+  #map {
+    height: 50vh !important;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .show-img {
+    height: 50vh;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .card-img-top {
+    width: 100% !important;
+  }
+  .map-div {
+    height: 70vh !important;
+  }
+}
+/* search div in navbar*/
+.search-btn {
+  background-color: #fe424d;
+  color: white;
+  border-radius: 2.5rem;
+  padding: 0 1rem 0 1rem;
+}
+.search-btn:hover {
+  background-color: #fe424d !important;
+  color: white;
+}
+.search-btn:active {
+  background-color: white !important;
+  color: #fe424d !important;
+}
+.search-btn i {
+  display: inline;
+  margin-right: 0.5rem;
+}
+.search-input {
+  border-radius: 2.5rem;
+  padding: 0.5rem 3rem 0.5rem 3rem;
+  font-size: 1rem;
+}
+
+.hidden {
+  display: none !important;
+}
+@media only screen and (max-width: 768px) {
+  .search-box {
+    /* width:35rem !important; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 0;
+  }
+  .search-input {
+    padding: 0.5rem 1.8rem 0.5rem 1.8rem;
+  }
+  .search-btn {
+    padding: 0 0.8rem 0 0.8rem;
+  }
+}
+
+/* navbar  responsiveness*/
+@media only screen and (max-width: 991px) {
+  .navbar-options {
+    /* height:200px; */
+    /* height:350px; */
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    right: 0px;
+    width: 100bvw;
+    /* transition:0.5s; */
+    background-color: white;
+    overflow: hidden;
+  }
+  .navbar-options {
+    justify-content: center;
+    align-items: center;
+    /* width:fit-content;
+        margin:30px auto 0 auto; */
+    text-align: center;
+  }
+  /* .navbar-options.active{
+        height:350px;
+    } */
+}
+@media only screen and (max-width: 992px) {
+  .no-border {
+    border-bottom: none !important;
+  }
+}
+
+/* filter options styling*/
+.filter-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+#filters {
+  /* box-sizing: border-box; */
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  width: 70%;
+  
+}
+
+.tax-toggle {
+  /* box-sizing: border-box; */
+  width: 30%;
+  height: 3.25rem;
+  padding: 1rem;
+  margin-left: 3rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter {
+  text-align: center;
+  margin-right: 2rem;
+  margin-top: 2rem;
+  opacity: 0.8;
+}
+
+.filter:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.filter p {
+  font-size: 0.8rem;
+}
+
+.filter > a:focus{
+  color:red;
+}
+
+.tax-info {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .filter-main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .filter-options,
+  .tax-toggle {
+    width: 100% !important;
+    order: initial;
+  }
+  .tax-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 0;
+  }
+}
+.location-icon {
+  color: #fe424d;
+}
+.category-link-reset {
+  all: unset; /* sari default properties hata dega */
+  cursor: pointer; /* clickable banaye rakhega */
+  display: inline-block;
+}
+
+/* footer about section */
+.about-box {
+  /* height: 400px; */
+  width: 100%;
+  box-shadow: 0 -4px 2px -4px #fe424d;
+}
+.about-option {
+  display: flex;
+  flex-wrap: wrap !important;
+  /* height: 330px; */
+  width: 100%;
+  color: white;
+  padding: 1rem;
+  background-color: #fe424d;
+}
+.links {
+  text-align: left;
+  line-height: 1.8rem;
+  /* height:100px; */
+  width: 25%;
+  margin: 1rem;
+  padding: 1rem;
+}
+.links a {
+  text-decoration: none;
+  color: white;
+  margin-top: 0.2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .about-option {
+    padding: 0.5rem;
+  }
+  .links {
+    width: 45%;
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 452px) {
+  .links {
+    width: 100%;
+  }
+}
+.arrow-btn-div {
+  background-color: #fe424d;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem;
+}
+
+.btn-up {
+  background-color: #fe424d;
+  border: 1px solid white;
+  color: white;
+  margin-right: 1rem;
+}
+.btn-up:hover {
+  border: 1px solid white;
+  color: white;
+}
+.btn-up:active {
+  background-color: white !important;
+  border: 1px solid #fe424d !important;
+  color: #fe424d !important;
+}
+
+.wanderlust-info {
+  height: 7rem;
+  /* background-color: aqua; */
+  box-shadow: 0 -4px 6px -1px #fe424d, 0 4px 6px -3px #fe424d;
+  height: 7rem;
+  /* background-color: #222222; */
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+}
+.wanderlust-sign {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+.wanterlust-sign-info {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+@media only screen and (max-width: 600px) {
+  .wanderlust-icon {
+    font-size: 2.2rem;
+  }
+  .wanterlust-sign-info {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .wanderlust-sign {
+    font-size: 1.2rem;
+  }
+  .f-info-links,
+  .f-info-socials,
+  .f-info-brand {
+    font-size: 1rem;
+  }
+  .f-info-links a {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width:668px){
+  .search-heading{
+    font-size: 1.5rem;
+  }
+  
+}
+@media only screen and (max-width:455px){
+  .search-heading{
+    font-size: 1.2rem;
+  }
+  
+}
