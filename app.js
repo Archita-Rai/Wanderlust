@@ -21,6 +21,7 @@ const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 const { Console } = require("console");
 const Listing = require("./models/listing.js");
+const PORT = process.env.PORT || 3000;
 
 const dbUrl = process.env.ATLASDB_URL;
 
@@ -84,17 +85,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// It is demo for creatinga new User
-// app.get("/demouser",async(req,res)=>{
-//    let fakeUser = new User({
-//     email:"student@gmail.com",
-//     username:"architarai"
-//    });
-
-//    let registereduser = await User.register(fakeUser,"helloworld");
-//    res.send(registereduser);
-// });
-
 
 app.use("/listings", listingsRouter);
 app.use("/listings/:id/reviews", reviewRouter);
@@ -123,18 +113,6 @@ app.get(
   })
 );
 
-// app.get("/testListing",async(req,res)=>{
-//  let sampleListing = new Listing({
-//      title:"My New Villa",
-//      description:"By the beach",
-//      price:1200,
-//      location:"Calangute Goa",
-//      country:"India",
-//   })
-//   await sampleListing.save()
-//   console.log("sample was saved");
-//   res.send("successful");
-// });
 
 //For all the existing and not existing route
 app.all("*", (req, res, next) => {
@@ -148,12 +126,7 @@ app.use((err, req, res, next) => {
   // res.status(statusCode).send(message);
 });
 
-// for seeing actual error
-// app.use((err,req,res,next)=>{
-//   console.log("error",err);
-//   res.send("error");
-// })
 
 app.listen(8080, (req, res) => {
-  console.log("Server is listening on port 3000");
+  console.log(`Server is running on port ${PORT}`);
 });
