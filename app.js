@@ -10,7 +10,7 @@ const ejsMate = require("ejs-mate");
 const CustomExpressError = require("./utils/CustomExpressError.js");
 const wrapAsync = require("./utils/wrapAsync.js");
 const session = require("express-session");
-const {MongoStore} = require("connect-mongo");
+const { MongoStore } = require("connect-mongo");
 const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
@@ -35,8 +35,6 @@ async function main() {
   await mongoose.connect(dbUrl);
 }
 
-
-
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 app.use(express.urlencoded({ extended: true }));
@@ -45,15 +43,15 @@ app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
 const store = MongoStore.create({
-  mongoUrl:dbUrl,
-  crypto:{
-    secret:process.env.SECRET,
+  mongoUrl: dbUrl,
+  crypto: {
+    secret: process.env.SECRET,
   },
-  touchAfter:24*3600,
+  touchAfter: 24 * 3600,
 });
 
-store.on("error", ()=>{
-  console.log("Error in mongo session store",err);
+store.on("error", () => {
+  console.log("Error in mongo session store", err);
 });
 
 const sessionOption = {
@@ -67,7 +65,6 @@ const sessionOption = {
     httpOnly: true,
   },
 };
-
 
 app.use(session(sessionOption));
 app.use(flash());
@@ -84,7 +81,6 @@ app.use((req, res, next) => {
   res.locals.currUser = req.user;
   next();
 });
-
 
 app.use("/listings", listingsRouter);
 app.use("/listings/:id/reviews", reviewRouter);
@@ -109,10 +105,15 @@ app.get(
       return res.redirect("/listings");
     }
 
-    res.render("listings/searchListing.ejs", { allListings: results,search:query });
-  })
+    res.render("listings/searchListing.ejs", {
+      allListings: results,
+      search: query,
+    });
+  }),
 );
-
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
 
 //For all the existing and not existing route
 app.all("*", (req, res, next) => {
@@ -125,7 +126,6 @@ app.use((err, req, res, next) => {
   res.status(statusCode).render("error.ejs", { message });
   // res.status(statusCode).send(message);
 });
-
 
 app.listen(8080, (req, res) => {
   console.log(`Server is running on port ${PORT}`);
